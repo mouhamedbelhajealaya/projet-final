@@ -1,11 +1,23 @@
+
+
 var btnPlus1 = document.querySelector(".btnPlus1");
 var count1 = document.querySelector(".count1");
 var btnMoins1 = document.querySelector(".btnMoins1");
 var price1 = document.querySelector(".price1");
 var total1 = document.querySelector(".totalP1");
+
 var nombreProduitDansPanier = document.querySelector(".nombreProduitDansPanier");
 var PriceOfAllPurchases = document.querySelector(".PriceOfAllPurchases");
-btnPlus1.addEventListener("click",function () {
+var middleTitleProduit = document.querySelector(".middleTitleProduit");
+var imgProduit1 = document.querySelector(".imgProduit1")
+var imageDeProduit= document.querySelector('.imageDeProduit')
+ var count1 = document.querySelector('.count1')
+ var cartTitle1 = document.querySelector('.cartTitle1')
+  console.log(middleTitleProduit);
+btnPlus1.addEventListener("click",function (test) {
+   
+    middleTitleProduit.innerHTML =parseInt(`${total1.innerHTML}`);
+    // middleTitleProduit.innerHTML = parseInt (`${cartTitle1.innerHTML}` );
     count1.innerHTML = parseInt(count1.innerHTML) + 1
     total1.innerHTML = parseInt(total1.innerHTML) + parseInt(price1.innerHTML)
     nombreProduitDansPanier.innerHTML=parseInt(nombreProduitDansPanier.innerHTML) + parseInt(1)
@@ -13,6 +25,7 @@ btnPlus1.addEventListener("click",function () {
 });
 btnMoins1.addEventListener('click',function(){
     if(parseInt(count1.innerHTML) > 0){
+        // middleTitleProduit.innerHTML =parseInt( `${total1.innerHTML}` ) - parseInt(price1.innerHTML) ;
         count1.innerHTML = parseInt(count1.innerHTML) - 1
         total1.innerHTML = parseInt(total1.innerHTML) - parseInt(price1.innerHTML)
         nombreProduitDansPanier.innerHTML=parseInt(nombreProduitDansPanier.innerHTML) - parseInt(1)
@@ -25,7 +38,14 @@ var btnMoins2 = document.querySelector(".btnMoins2");
 var price2 = document.querySelector(".price2");
 var total2 = document.querySelector(".totalP2");
 var nombreProduitDansPanier = document.querySelector(".nombreProduitDansPanier");
-btnPlus2.addEventListener("click",function () {
+// var middleTitleProduit = document.querySelector(".middleTitleProduit");
+
+btnPlus2.addEventListener("click",function (test) {
+//    middleTitleProduit.innerHTML =parseInt( `${total2.innerHTM}` ) ;
+    
+    
+
+
     count2.innerHTML = parseInt(count2.innerHTML) + 1
     total2.innerHTML = parseInt(total2.innerHTML) + parseInt(price2.innerHTML)
     nombreProduitDansPanier.innerHTML=parseInt(nombreProduitDansPanier.innerHTML) + parseInt(1)
@@ -45,6 +65,7 @@ var btnMoins3 = document.querySelector(".btnMoins3");
 var price3 = document.querySelector(".price3");
 var total3 = document.querySelector(".totalP3");
 var nombreProduitDansPanier = document.querySelector(".nombreProduitDansPanier");
+var middleTitleProduit = document.querySelector(".middleTitleProduit");
 btnPlus3.addEventListener("click",function () {
     count3.innerHTML = parseInt(count3.innerHTML) + 1
     total3.innerHTML = parseInt(total3.innerHTML) + parseInt(price3.innerHTML)
@@ -52,6 +73,8 @@ btnPlus3.addEventListener("click",function () {
     PriceOfAllPurchases.innerHTML= parseInt(PriceOfAllPurchases.innerHTML) + parseInt(price3.innerHTML)
 });
 btnMoins3.addEventListener('click',function(){
+    middleTitleProduit.innerHTML =parseInt(`${total3.innerHTML}` );
+
     if(parseInt(count3.innerHTML) > 0){
         count3.innerHTML = parseInt(count3.innerHTML) - 1
         total3.innerHTML = parseInt(total3.innerHTML) - parseInt(price3.innerHTML)
@@ -59,6 +82,7 @@ btnMoins3.addEventListener('click',function(){
         PriceOfAllPurchases.innerHTML= parseInt(PriceOfAllPurchases.innerHTML) - parseInt(price3.innerHTML)
     } 
 });
+
 var btnPlus4 = document.querySelector(".btnPlus4");
 var count4 = document.querySelector(".count4");
 var btnMoins4 = document.querySelector(".btnMoins4");
@@ -72,6 +96,8 @@ btnPlus4.addEventListener("click",function () {
     PriceOfAllPurchases.innerHTML= parseInt(PriceOfAllPurchases.innerHTML) + parseInt(price4.innerHTML)
 });
 btnMoins4.addEventListener('click',function(){
+    middleTitleProduit.innerHTML =parseInt(`${total4.innerHTML}` );
+
     if(parseInt(count4.innerHTML) > 0){
         count4.innerHTML = parseInt(count4.innerHTML) - 1
         total4.innerHTML = parseInt(total4.innerHTML) - parseInt(price4.innerHTML)
@@ -239,4 +265,35 @@ btnMoins12.addEventListener('click',function(){
         PriceOfAllPurchases.innerHTML= parseInt(PriceOfAllPurchases.innerHTML) - parseInt(price12.innerHTML)
     }
 });
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
 
